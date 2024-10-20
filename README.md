@@ -4,6 +4,8 @@ This simple [Obsidian](https://obsidian.md/) plugin converts a code block of typ
 
 The main benefit of using this plugin instead of an `<iframe>` HTML element is the possibility to refer to a local attachment rather than an external URL - independent of the absolute location of your Obsidian vault (and independent of your platform)
 
+(documentation follows)
+
 ## License ##
 
 [MIT License](LICENSE.md)
