@@ -1,16 +1,24 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-iframe-from-attachment",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "a simple Obsidian plugin which opens a local HTML file within an iframe",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
 		"version": "node version-bump.mjs && git add manifest.json versions.json"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": ["obsidian","iframe","attachment"],
+	"author": "Andreas Rozek <a.rozek@gmx.de> (https://www.rozek.de/)",
 	"license": "MIT",
+  "homepage": "https://github.com/rozek/obsidian-iframe-from-attachment#readme",
+  "bugs": {
+    "url": "https://github.com/rozek/obsidian-iframe-from-attachment/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rozek/obsidian-iframe-from-attachment.git"
+  },
 	"devDependencies": {
 		"@types/node": "^16.11.6",
 		"@typescript-eslint/eslint-plugin": "5.29.0",
