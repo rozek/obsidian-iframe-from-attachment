@@ -40,7 +40,7 @@ export default class IframeAttachmentPlugin extends Plugin {
     }
   
     if (AttachmentFile == null) {
-      throw new Error(`Attachment not found ("${currentFolder}/${Attachment}")`)
+      throw new Error(`Attachment not found ("${Attachment}")`)
     }
   
     return vault.getResourcePath(AttachmentFile)
