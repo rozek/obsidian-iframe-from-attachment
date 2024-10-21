@@ -22,8 +22,8 @@ export default class IframeAttachmentPlugin extends Plugin {
       if (Width  != null) { iFrame.width  = Width }
       if (Height != null) { iFrame.height = Height }
     } catch (Signal:any) {
-      console.error('"iframe-from-attachment": processing failed with',Signal)
-      Element.createEl('p', { text:`"iframe-from-attachment": processing failed with ${Signal.message}` })
+      console.error('"iframe-from-attachment" processing failed with',Signal)
+      Element.createEl('p', { text:`Error: "iframe-from-attachment" processing failed with ${Signal.message}` })
     }
   }
 
@@ -40,7 +40,7 @@ export default class IframeAttachmentPlugin extends Plugin {
     }
   
     if (AttachmentFile == null) {
-      throw new Error(`"iframe-from-attachment": Attachment not found ("${Attachment}")`)
+      throw new Error(`Attachment not found ("${currentFolder}/${Attachment}")`)
     }
   
     return vault.getResourcePath(AttachmentFile)
