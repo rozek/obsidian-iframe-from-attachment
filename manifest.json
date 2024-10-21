@@ -6,11 +6,11 @@
 	"description": "Opens an HTML attachment of a note within an iFrame",
 	"author": "Andreas Rozek <a.rozek@gmx.de> (https://www.rozek.de/)",
 	"authorUrl": "https://www.rozek.de/",
-  "fundingUrl": {
+    "fundingUrl": {
       "Buy Me a Coffee":"https://www.buymeacoffee.com/andreasrozek",
       "GitHub Sponsor": "https://github.com/sponsors/rozek",
       "Patreon":        "https://www.patreon.com/AndreasRozek",
       "Steady":         "https://steadyhq.com/de/andreas-rozek/about"
-  }
+    }
 	"isDesktopOnly": false
 }
