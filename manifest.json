@@ -3,7 +3,7 @@
 	"name": "IFrame from Attachment",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Opens an HTML attachment of a note within an iFrame",
+	"description": "Opens an HTML attachment of a note within an iFrame.",
 	"author": "Andreas Rozek <a.rozek@gmx.de> (https://www.rozek.de/)",
 	"authorUrl": "https://www.rozek.de/",
     "fundingUrl": {
