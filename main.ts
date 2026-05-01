@@ -5,7 +5,7 @@ export default class IframeAttachmentPlugin extends Plugin {
     this.registerMarkdownCodeBlockProcessor('iframe-from-attachment', this.iFrameProcessor.bind(this));
   }
 
-  async iFrameProcessor (Source:string, Element:HTMLElement, Context:MarkdownPostProcessorContext) {
+  iFrameProcessor (Source:string, Element:HTMLElement, Context:MarkdownPostProcessorContext) {
     const Match = /^(\S+)(?:\s+(\d+)(?:x(\d+))?)?$/.exec(Source.trim())
     if (Match == null) {
       console.error('invalid arguments for "iframe-from-attachment"',Source)
