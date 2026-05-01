@@ -1,7 +1,7 @@
-import { Plugin, MarkdownPostProcessor, MarkdownPostProcessorContext } from 'obsidian'
+import { Plugin, MarkdownPostProcessorContext } from 'obsidian'
 
 export default class IframeAttachmentPlugin extends Plugin {
-  async onload() {
+  onload() {
     this.registerMarkdownCodeBlockProcessor('iframe-from-attachment', this.iFrameProcessor.bind(this));
   }
 
@@ -13,21 +13,23 @@ export default class IframeAttachmentPlugin extends Plugin {
       return
     }
     
-    const [_, Attachment, Width,Height] = Match  
+    const [, Attachment, Width,Height] = Match
     try {
-      const absolutePath = await this.getAbsolutePath(Attachment,Context)
+      const absolutePath = this.getAbsolutePath(Attachment,Context)
       
       const iFrame = Element.createEl('iframe')
       iFrame.src = absolutePath
       if (Width  != null) { iFrame.width  = Width }
       if (Height != null) { iFrame.height = Height }
-    } catch (Signal:any) {
+    } catch (Signal:unknown) {
       console.error('"iframe-from-attachment" processing failed with',Signal)
-      Element.createEl('p', { text:`Error: "iframe-from-attachment" processing failed with ${Signal.message}` })
+
+      const Message = Signal instanceof Error ? Signal.message : String(Signal)
+      Element.createEl('p', { text:`Error: "iframe-from-attachment" processing failed with ${Message}` })
     }
   }
 
-  async getAbsolutePath (Attachment:string, Context:MarkdownPostProcessorContext):Promise<string> {
+  getAbsolutePath (Attachment:string, Context:MarkdownPostProcessorContext):string {
     const { vault }   = this.app
     const currentFile = Context.sourcePath
     
